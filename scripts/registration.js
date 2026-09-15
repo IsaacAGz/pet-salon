@@ -31,23 +31,17 @@ function displayPetNames() {
     return output + `</ol>`;
 }
 
-
-
-function createPet(name, age, breed, gender, service) {
-    let pet = {
-        name: name,
-        age: age, 
-        breed: breed,
-        gender: gender,
-        service: service
-    }
-
-    return pet
+function Pet(name, age, breed, gender, service) {
+    this.name = name;
+    this.age = age;
+    this.breed = breed;
+    this.gender = gender;
+    this.service = service;
 }
 
-let pet4 = createPet("Tyson", 6, "Pitbull", "Male", "Check-up");
-let pet5 = createPet("Entique", 3, "Caramelo", "Male", "Check-up");
-let pet6 = createPet("Flabio", 12, "Bulldog", "Male", "Surgery");
+let pet4 = new Pet("Tyson", 6, "Pitbull", "Male", "Check-up");
+let pet5 = new Pet("Entique", 3, "Caramelo", "Male", "Check-up");
+let pet6 = new Pet("Flabio", 12, "Bulldog", "Male", "Surgery");
 
 pets.push(pet4);
 pets.push(pet5);

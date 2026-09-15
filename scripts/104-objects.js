@@ -69,3 +69,17 @@ let dogLeash = {
 document.getElementById("shampoo").innerHTML = `Product: ${dogShampoo.name} is back in stock, special offer $${dogShampoo.price}.`;
 document.getElementById("bone").innerHTML = `Product: ${dogBone.name} is back sold out, please check again later.`;
 document.getElementById("leash").innerHTML = `${dogLeash.name} now on sale, special offer $${dogLeash.price}.`;
+
+
+function Student(name, lastName, age, isStudent) {
+
+    this.name = name;
+    this.lastName = lastName;
+    this.age = age;
+    this.isStudent = isStudent;    
+}
+
+let student2 = new Student("John", "Doe", 30, false);
+
+
+
