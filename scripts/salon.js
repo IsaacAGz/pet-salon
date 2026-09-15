@@ -6,7 +6,7 @@ let salon = {
 };
 
 function displaySalonInfo (salonData) {
-    let salonStr = `<p>Name: ${salonData.name}<br>Hours: ${salonData.hours}<br>Phone: ${salonData.phone}<br>Address: ${salonData.address}</p>`;
+    let salonStr = `Name: ${salonData.name} Hours: ${salonData.hours} Phone: ${salonData.phone} Address: ${salonData.address}</p>`;
     document.getElementById("salonInfo").innerHTML = salonStr;
 }
 
