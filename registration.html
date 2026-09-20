@@ -34,12 +34,85 @@
     </header>
 
     <main>
-        <h1 style="text-align: center; font-family: Arial, sans-serif; background-color: #34585b; color: white;">Registration</h1>
+        <h1 style="border-radius: 5px; text-align: center; font-family: Arial, sans-serif; background-color: #34585b; color: white;">Registration</h1>
         <div class="registeredPets">
             <h2>Registered Pets</h2>
 
             <div id="registeredPets"></div>
         </div>
+
+        <div class="petsDiv">
+            <form id="petForm">
+
+                <div class="input-group flex-column mb-3">
+                    <div class="mb-1">
+                        <span class="label">Pet Name</span>
+                    </div>
+                    <input id="inputName" type="text" class="form-control w-100" placeholder="Enter your pets name">
+                </div>
+
+                <div class="input-group flex-column mb-3">
+                    <div class="input-group-prepend">
+                            <span class="label">Age</span>
+                    </div>
+                    <input id="inputAge" type="number" class="form-control w-100" placeholder="Enter your pets age">
+                </div>
+
+                <div class="input-group flex-column mb-3">
+                    <div class="input-group-prepend">
+                        <span class="label">Breed</span>
+                    </div>
+                    <input id="inputBreed" type="text" class="form-control w-100" placeholder="Enter your pets name">
+                </div>
+
+                <div class="input-group flex-column mb-3">
+                    <div class="input-group-prepend">
+                        <span class="label">Gender</span>
+                    </div>
+                    <select id="inputGender" class="form-select w-100">
+                        <option value="" class="dropdown-item" selected disabled>Select a gender...</option>
+                        <option class="dropdown-item">Male</option>
+                        <option class="dropdown-item">Female</option>
+                    </select>
+                </div>
+
+                <div class="input-group flex-column mb-3">
+                    <div class="input-group-prepend">
+                        <span class="label">Service</span>
+                    </div>
+                    <select id="inputService" class="form-select w-100">
+                        <option value="" class="dropdown-item" selected disabled>Select a service...</option>
+                        <option class="dropdown-item">Bath</option>
+                        <option class="dropdown-item">Nail trimming</option>
+                        <option class="dropdown-item">Daycare</option>
+                        <option class="dropdown-item">Check-up</option>
+                        <option class="dropdown-item">Full-Serivce</option>
+                    </select>
+                </div>
+
+                <div class="d-flex justify-content-end gap-3">
+                    <button onclick="displayRow(event)" class="btn btn-primary" type="submit">Register</button>
+                    <button class="btn btn-secondary" type="reset">Reset</button>
+                </div>   
+
+            </form>
+        </div>
+
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Breed</th>
+                <th>Gender</th>
+                <th>Service</th>
+                <th>Delete</th>
+            </tr>
+
+            <tbody id="petsTable">
+
+            </tbody>
+        </table>
+        
     </main>
 
     <footer>
