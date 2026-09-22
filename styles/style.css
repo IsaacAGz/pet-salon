@@ -1,0 +1,11 @@
+h1, p {
+    color: red;
+}
+
+#list{
+    padding: auto;
+}
+
+.text-style{ 
+    background-color: red;
+}
