@@ -1,0 +1,79 @@
+:root {
+    --var-main-bg: rgb(224, 225, 231);
+    --var-main-surface: rgb(132, 136, 168);
+    --var-main-text: rgb(40, 37, 43);
+    --var-main-accent: rgb(102, 52, 52);
+}
+
+.dark-mode {
+    --var-main-bg: rgb(43, 24, 44);
+    --var-main-surface: rgb(132, 136, 168);
+    --var-main-text: rgb(244, 239, 248);
+    --var-main-accent: rgb(203, 203, 223);
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+main{
+    background-color: var(--var-main-bg);
+    transition: background-color ease 0.8s;
+}
+
+.image-container {
+    width: 25%;
+}
+
+.image-container img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+section{
+    height: 100vh;
+    justify-content: space-evenly;
+}
+
+h1, h2, p {
+    color: var(--var-main-text);
+}
+
+p {
+    line-height: 28px;
+}   
+
+button, a {
+    background-color: var(--var-main-surface);
+    padding: 10px 15px;
+    border: 2px solid var(--var-main-accent);
+    color: var(--var-main-text);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover, a:hover {
+    opacity: 0.5;
+}
+
+#description {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: var(--var-main-surface);
+    border-radius: 10px;
+    padding: 10px;
+}
