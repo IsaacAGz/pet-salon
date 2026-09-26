@@ -4,41 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/registration.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+
     <title>Document</title>
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Pet Salon</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="registration.html">Registration</a>
-            </li>
-        </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button id="changeMode">Change Mode</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="registration.html">Registration</a>
+                </li>
+            </ul>
+            </div>
         </div>
-    </div>
-    </nav>
+        </nav>
+    </header>
 
     <main>
-        <h1>Home</h1>
-        <div id="salonInfo" style="background-color: rgb(108, 93, 60); padding: 10px; color: rgb(204, 214, 214);"></div>
+        <div class="salonInfo">
+            <div class="salonName">
+                <h1>Welcome to 
+                <h1>Pawfect Shine</h1> 
+                <h1>Grooming Studio</h1>
+                <p>Premium Care & Pampering for Your Best Friend</p>
+            </div>
+            <div class="salonDescription">
+                <p>At Pawfect Shine, we believe every pet deserves to look, smell, and feel their absolute best. Our certified, compassionate groomers provide a stress-free, spa-like experience tailored to your pet’s unique personality and coat needs.</p>
+            </div>
+                
+        </div>
+
+        <div class="aboutUs">
+            <img style="width: 50%; " src="./assets/pets_index.jpg">
+            <div style="width: 40%; padding:5vh;">
+                <h2 style="padding-bottom :2vh;">About Us</h2>
+                <p >Founded out of a deep love for animals, Pawfect Shine Grooming Studio was built to offer a refreshing alternative to noisy, high-stress commercial grooming facilities. We designed our studio from the ground up with a pet-first mindset, incorporating soft lighting, calming aromatherapy, and private relaxation suites instead of crowded holding crates. Every element of our space is crafted to feel less like a clinical appointment and more like a relaxing retreat where your companion can unwind.</p>
+            </div>
+        </div>
     </main>
 
-    
-    <script src="scripts/salon.js"></script>
+    <footer>
+        <div style="display: flex;  justify-content: space-between; padding: 20px;">
+            <div>
+                <h3>Pawfect Shine Grooming Studio</h3>
+                <p>Address: 123 Bark Avenue, Suite 100</p>
+                <p>Phone: (555) 867-5309</p>
+                <p>Hours: Tuesday – Sunday | 8:00 AM – 6:00 PM</p>
+            </div>
+            <div style="display: flex; flex-direction:column; padding-right: 50px;">
+                <a href="">Facebook</a>
+                <a href="">Instagram</a>
+                <a href="">Youtube</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script
+		src="https://code.jquery.com/jquery-4.0.0.js"
+		integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+		crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="./scripts/salon.js"></script>
+    
     
 </body>
 </html>

@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Registration</title>
-    <link rel="stylesheet" href="styles/registration.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
 </head>
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Pet Salon</a>
+                <button id="changeMode">Change Mode</button>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,91 +34,124 @@
     </header>
 
     <main>
-        <h1 style="border-radius: 5px; text-align: center; font-family: Arial, sans-serif; background-color: #34585b; color: white;">Registration</h1>
-        <div class="registeredPets">
-            <h2>Registered Pets</h2>
-
-            <div id="registeredPets"></div>
-        </div>
-
-        <div class="petsDiv">
-            <form id="petForm">
-
-                <div class="input-group flex-column mb-3">
-                    <div class="mb-1">
-                        <span class="label">Pet Name</span>
-                    </div>
-                    <input id="inputName" type="text" class="form-control w-100" placeholder="Enter your pets name">
+        <h1 class="siteTitle">Registration</h1>
+        
+        <div class="formDiv">
+            <div class="registeredPets">
+                <h2 style="margin-left: auto; margin-right: auto;">Registered Pets</h2>
+                <div id="registeredPets">
+                    
                 </div>
+            </div>
 
-                <div class="input-group flex-column mb-3">
-                    <div class="input-group-prepend">
-                            <span class="label">Age</span>
-                    </div>
-                    <input id="inputAge" type="number" class="form-control w-100" placeholder="Enter your pets age">
-                </div>
-
-                <div class="input-group flex-column mb-3">
-                    <div class="input-group-prepend">
-                        <span class="label">Breed</span>
-                    </div>
-                    <input id="inputBreed" type="text" class="form-control w-100" placeholder="Enter your pets name">
-                </div>
-
-                <div class="input-group flex-column mb-3">
-                    <div class="input-group-prepend">
-                        <span class="label">Gender</span>
-                    </div>
-                    <select id="inputGender" class="form-select w-100">
-                        <option value="" class="dropdown-item" selected disabled>Select a gender...</option>
-                        <option class="dropdown-item">Male</option>
-                        <option class="dropdown-item">Female</option>
-                    </select>
-                </div>
-
-                <div class="input-group flex-column mb-3">
-                    <div class="input-group-prepend">
-                        <span class="label">Service</span>
-                    </div>
-                    <select id="inputService" class="form-select w-100">
-                        <option value="" class="dropdown-item" selected disabled>Select a service...</option>
-                        <option class="dropdown-item">Bath</option>
-                        <option class="dropdown-item">Nail trimming</option>
-                        <option class="dropdown-item">Daycare</option>
-                        <option class="dropdown-item">Check-up</option>
-                        <option class="dropdown-item">Full-Serivce</option>
-                    </select>
-                </div>
-
+            <div id="animatedForm" class="animatedFormContent">
                 <div class="d-flex justify-content-end gap-3">
-                    <button onclick="displayRow(event)" class="btn btn-primary" type="submit">Register</button>
-                    <button class="btn btn-secondary" type="reset">Reset</button>
-                </div>   
+                        <button class="formBtn" onclick="toggleForm(event)">Open Form</button>
+                </div>
 
-            </form>
+                <form id="petForm" class="petForm">
+                    <div class="input-group flex-column mb-3" style="padding-top: 10px;">
+                        <div class="mb-1">
+                            <span class="label">Pet Name</span>
+                        </div>
+                        <input id="inputName" type="text" class="form-control w-100" placeholder="Enter your pets name">
+                    </div>
+
+                    <div class="input-group flex-column mb-3">
+                        <div class="input-group-prepend">
+                                <span class="label">Age</span>
+                        </div>
+                        <input id="inputAge" type="number" class="form-control w-100" placeholder="Enter your pets age">
+                    </div>
+
+                    <div class="input-group flex-column mb-3">
+                        <div class="input-group-prepend">
+                            <span class="label">Breed</span>
+                        </div>
+                        <input id="inputBreed" type="text" class="form-control w-100" placeholder="Enter your pets name">
+                    </div>
+
+                    <div class="input-group flex-column mb-3">
+                        <div class="input-group-prepend">
+                            <span class="label">Gender</span>
+                        </div>
+                        <select id="inputGender" class="form-select w-100">
+                            <option value="" class="dropdown-item" selected disabled>Select a gender...</option>
+                            <option class="dropdown-item">Male</option>
+                            <option class="dropdown-item">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group flex-column mb-3">
+                        <div class="input-group-prepend">
+                            <span class="label">Service</span>
+                        </div>
+                        <select id="inputService" class="form-select w-100">
+                            <option value="" class="dropdown-item" selected disabled>Select a service...</option>
+                            <option class="dropdown-item">Bath</option>
+                            <option class="dropdown-item">Nail trimming</option>
+                            <option class="dropdown-item">Daycare</option>
+                            <option class="dropdown-item">Check-up</option>
+                            <option class="dropdown-item">Full-Serivce</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group flex-column mb-3">
+                        <div class="input-group-prepend">
+                            <span class="label">Picture</span>
+                        </div>
+                        <input id="upload" type="file" class="form-control w-100" placeholder="Upload an image of your pet (optional)" accept="image/*">
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-3">
+                        <button onclick="savePet(event)" class="btn btn-primary" type="submit">Register</button>
+                        <button onclick="resetForm(event)" class="btn btn-secondary" type="reset">Reset</button>
+                    </div>   
+
+                </form>
+            </div>
         </div>
 
-        <table class="table">
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Breed</th>
-                <th>Gender</th>
-                <th>Service</th>
-                <th>Delete</th>
-            </tr>
+        <div class="petGrid" id="petGallery">
+            
+        </div>
 
-            <tbody id="petsTable">
+        <div class="tableContainer">
+            <table class="petTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Breed</th>
+                    <th>Gender</th>
+                    <th>Service</th>
+                    <th>Delete</th>
+                </tr>
 
-            </tbody>
-        </table>
+                <tbody id="petsTable">
+
+                </tbody>
+            </table>
+        </div>
         
     </main>
 
     <footer>
-        
+        <div style="display: flex;  justify-content: space-between; padding: 20px;">
+            <div>
+                <h3>Pawfect Shine Grooming Studio</h3>
+                <p>Address: 123 Bark Avenue, Suite 100</p>
+                <p>Phone: (555) 867-5309</p>
+                <p>Hours: Tuesday – Sunday | 8:00 AM – 6:00 PM</p>
+            </div>
+            <div style="display: flex; flex-direction:column; padding-right: 50px;">
+                <a href="">Facebook</a>
+                <a href="">Instagram</a>
+                <a href="">Youtube</a>
+            </div>
+        </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-4.0.0.js"integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="crossorigin="anonymous"></script>
     <script src="scripts/registration.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     

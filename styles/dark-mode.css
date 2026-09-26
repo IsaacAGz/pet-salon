@@ -1,8 +1,10 @@
 :root {
-    --var-main-bg: rgb(224, 225, 231);
-    --var-main-surface: rgb(132, 136, 168);
-    --var-main-text: rgb(40, 37, 43);
-    --var-main-accent: rgb(102, 52, 52);
+    --var-main-bg: #2373F4;
+    --var-main-surface: #65D0F4;
+    --var-main-text: #F2F7A0;
+    --var-main-accent: #2E6FA0;
+    --var-form-bg: #2373F4;
+    --var-footer-bg: #15D8B3;
 }
 
 .dark-mode {
@@ -10,6 +12,8 @@
     --var-main-surface: rgb(132, 136, 168);
     --var-main-text: rgb(244, 239, 248);
     --var-main-accent: rgb(203, 203, 223);
+    --var-form-bg: rgb(43, 24, 44);
+    --var-footer-bg: #414563;
 }
 
 * {
@@ -19,9 +23,86 @@
     margin: 0px;
 }
 
-main{
+a{
+    text-decoration: none;
+}
+
+.petName{
+    color: var(--var-main-text);
+}
+
+.tableContainer{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80vw;
+    overflow-y: auto;
+    min-height: 20vh;
+    max-height: 40vh;
+    background-color: var(--var-main-surface);
+    border-radius: 10px;
+}
+
+header{
+    background-color: var(--var-footer-bg);
+}
+
+#salonInfo{
+    background-color: var(--var-main-surface); 
+    padding: 10px; 
+    color: var(--var-main-text);
+}
+
+.petTable{
+    margin: 10px;
+    border-radius: 10px;
+    width: 80vw;
+    height: fit-content;
+    border-collapse: collapse;
+    background-color: var(--var-main-surface);
+}
+
+.petTable th, .petTable td{
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.petTable tr {
+    height: auto;
+}
+
+.serviceTable{
+    margin: 10px;
+    border-radius: 10px;
+    width: 80vw;
+    height: fit-content;
+    border-collapse: collapse;
+    background-color: var(--var-main-surface);
+}
+
+.serviceTable th, .serviceTable td{
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.serviceTable tr {
+    height: auto;
+}
+
+body{
     background-color: var(--var-main-bg);
     transition: background-color ease 0.8s;
+}
+
+main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    padding-bottom: 10vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .image-container {
@@ -41,19 +122,21 @@ main{
 }
 
 section{
-    height: 100vh;
+    height: 50vh;
     justify-content: space-evenly;
 }
 
-h1, h2, p {
+h1, h2 , h3{
     color: var(--var-main-text);
+    font-weight: bold;
 }
 
 p {
     line-height: 28px;
+    color: var(--var-main-text);
 }   
 
-button, a {
+button{
     background-color: var(--var-main-surface);
     padding: 10px 15px;
     border: 2px solid var(--var-main-accent);
@@ -77,3 +160,140 @@ button:hover, a:hover {
     border-radius: 10px;
     padding: 10px;
 }
+
+.registeredPets {
+    max-height: 80vh;
+    padding: 5vh;
+    font-size: 3vh;
+    font-family: Arial, sans-serif;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border: 8px solid var(--var-main-accent);
+    margin-bottom: 1vh;
+    border-radius: 15px;
+    background-color: var(--var-form-bg);
+}
+
+#registeredPets{
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.formBtn{
+    margin-right: auto;
+    margin-left: auto;
+    background-color: var(--var-form-bg);
+
+}
+
+.formDiv {
+    display: flex;
+    justify-content: space-evenly;
+    height: 45rem;
+    align-self: center;
+    background-color: var(--var-main-surface);
+    margin: 20px auto;
+    padding: 1rem;
+    width: 90%;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: max-height .8s ease-out, opacity .8s ease-out;
+    opacity: 1;
+}
+
+.animatedFormContent{
+    margin-top: 3vh;
+    height: 50px;
+    align-self: flex-start;
+    overflow: hidden;
+    transition: height 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.animatedFormContent.open {
+    height: 70vh;
+    opacity: 1;
+    overflow-y: auto;
+}
+
+.label {
+    color: black;
+}
+
+.petGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    background-color: var(--var-main-surface);
+    align-self: center;
+    min-height: 35vh;
+    max-height: 70vh;
+    margin: 10vh;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.pet-card{
+    transition: background-color ease 0.8s;
+    background-color: var(--var-main-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px;
+}
+    
+.pet-img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.petInfo h3{
+    color: var(--var-main-accent);
+}
+
+.serviceForm{
+    padding: 40px;
+    background-color: var(--var-main-surface);
+    border-radius: 15px;
+}
+
+footer{
+    height: 15rem;
+    background-color: var(--var-footer-bg);
+}
+
+.salonInfo{
+    display: flex;
+}
+
+.salonInfo{
+
+    padding: 10vh;
+    gap:10vh;
+}
+
+.salonName{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.salonDescription{
+    padding-top: 50px;
+    margin-left: 50px;
+}
+
+.aboutUs{
+    display: flex;
+
+}
+
+.siteTitle{
+    padding-left: 8vh;
+    padding-top: 8vh;
+}
+
