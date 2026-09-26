@@ -35,7 +35,7 @@ function refreshGallery() {
         card.innerHTML = `
             <img src="${pet.imagePath}" alt="${pet.name}" class="pet-img">
             <div class="petInfo">
-                <h3>${pet.name}</h3>
+                <h3 id="dataCardName">${pet.name}</h3>
                 <p><strong>Breed:</strong> ${pet.breed}</p>
                 <p><strong>Age:</strong> ${pet.age} | <strong>Gender: </strong> ${pet.gender}</p>
             </div>
@@ -136,12 +136,16 @@ $(document).ready(function() {
 
     if(savedTheme === 'dark') {
         $("body").toggleClass("dark-mode");
+        $("#changeMode").text("🌘 Dark Mode");
+    } else {
+        $("#changeMode").text("☀️ Light Mode");
     }
 
     $("#changeMode").click(function() {
         $("body").toggleClass("dark-mode");
         const isDark = $("body").hasClass("dark-mode");
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        $("#changeMode").text(isDark ? "🌘 Dark Mode" : "☀️ Light Mode");
     });
 })
 
